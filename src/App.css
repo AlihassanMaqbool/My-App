@@ -1,0 +1,127 @@
+/* App-specific styles */
+
+/* Smooth scrolling for the entire app */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom selection color */
+::selection {
+  background: rgba(255, 107, 107, 0.3);
+  color: inherit;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid #FF6B6B;
+  outline-offset: 2px;
+}
+
+/* Button press effect */
+button:active {
+  transform: scale(0.98);
+}
+
+/* Canvas styling */
+canvas {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Tab styling */
+[data-state="active"] {
+  position: relative;
+}
+
+/* Range slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  background: #E0E0E0;
+  border-radius: 3px;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 6px;
+  background: #E0E0E0;
+  border-radius: 3px;
+}
+
+/* Filter preset thumbnail */
+.filter-preset img {
+  transition: filter 0.3s ease;
+}
+
+/* Loading state for images */
+img {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+}
+
+img[src] {
+  background: none;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .editor-canvas-container {
+    max-height: 50vh;
+  }
+  
+  .filter-preset {
+    padding: 0.5rem;
+  }
+  
+  .filter-preset span {
+    font-size: 0.625rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (pointer: coarse) {
+  .btn-magnetic:hover {
+    transform: none;
+  }
+  
+  .card-3d:hover {
+    transform: none;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .glass {
+    background: rgba(255, 255, 255, 0.95);
+  }
+  
+  .glass-dark {
+    background: rgba(46, 46, 46, 0.95);
+  }
+}
+
+/* Print styles */
+@media print {
+  nav,
+  .btn-magnetic,
+  .animate-float,
+  .animate-pulse-glow {
+    display: none !important;
+  }
+  
+  section {
+    break-inside: avoid;
+  }
+}
